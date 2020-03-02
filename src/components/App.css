@@ -1,0 +1,368 @@
+* {
+  box-sizing: border-box;
+}
+
+button,
+summary {
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+details {
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #eeeeee;
+}
+
+.app {
+  flex-direction: column;
+  margin: 0 auto;
+  display: flex;
+  width: 60%;
+}
+
+/* CONTROLS */
+input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+button,
+select {
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* EVENTS */
+ul.events {
+  /* style */
+  list-style: none;
+  margin-top: 0;
+  padding: 0;
+
+  /* flex */
+  display: flex;
+  flex-direction: column;
+}
+
+ul.events li {
+  border-top: 1px dashed gray;
+  padding: 10px;
+  margin: 0;
+  flex: 1;
+
+  /* transition */
+  transition: all 0.2s;
+}
+
+ul.events li:hover {
+  background-color: #eeeeee;
+}
+
+ul.events li:first-child {
+  border-top: none;
+  margin-top: 10px;
+}
+
+/* event */
+.event {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.event > div:nth-child(2) {
+  flex: 1;
+}
+
+.event.isNow {
+  background-color: #eeeeee;
+}
+
+.event > div:first-child {
+  margin-right: 10px;
+}
+
+.event > div:last-child {
+  justify-self: flex-end;
+}
+
+.event div:last-child button {
+  font-size: 0.8em;
+  padding: 5px;
+}
+
+/* date-box */
+.date-box {
+  border: 1px solid #dddddd;
+  font-size: 0.8em;
+
+  /* flex */
+  display: flex;
+  background-color: white;
+}
+
+.date-box div:first-child {
+  border-right: 1px solid #dddddd;
+  font-weight: bold;
+}
+
+.date-box div:last-child {
+  color: #444444;
+}
+
+.date-box div {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BOOKMARKS */
+div.bookmarks-container {
+  background-color: #ed4337;
+  position: absolute;
+  overflow: auto;
+  top: -350px;
+  left: 0;
+  right: 0;
+  height: 350px;
+  transition: all 0.4s;
+  padding: 10px;
+}
+
+div.bookmark-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+div.bookmark-list ul li {
+  padding: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+
+  /* flex */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+div.bookmark-list ul li:first-child {
+  border-top: none;
+}
+
+div.bookmark-list ul li div {
+  flex: 1;
+}
+
+div.bookmark-list ul li div a {
+  text-decoration: none;
+  color: white;
+}
+
+div.bookmark-list ul li button {
+  font-size: 0.8em;
+  padding: 5px;
+  border: none;
+}
+
+/* SORT */
+.sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sort button {
+  margin: 5px 2px;
+}
+
+/* MODAL */
+.modal {
+  border: 1px solid #7641fc;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+
+  /* flex */
+  display: none;
+  flex-direction: column;
+
+  /* width */
+  width: 600px;
+  max-width: 100%;
+
+  /* height */
+  min-height: 500px;
+  max-height: 100%;
+
+  /* centering */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.modal header p {
+  font-weight: bold;
+  flex: 2;
+}
+
+.modal header .control {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.modal header .control button {
+  padding: 5px;
+}
+
+.modal header .control button:last-child {
+  margin-left: 5px;
+}
+
+.modal main {
+  margin: 10px 0;
+}
+
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* filterbox */
+.filter-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-box h2 {
+  font-weight: normal;
+}
+
+.reset-filters {
+  margin: 10px 0 0 0;
+  padding: 5px;
+  font-size: 0.8em;
+}
+
+.filter-box div {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* bookmark toggle button */
+.bookmarkToggleButton {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: white;
+  border-top: none;
+  font-size: 0.8em;
+  position: fixed;
+  z-index: 100;
+  right: 15px;
+  top: 0;
+  transition: all 0.4s;
+}
+
+/* notification */
+.notification {
+  /* style */
+  background-color: white;
+  border: 1px solid #7641fc;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: none;
+  font-size: 0.8em;
+  width: 200px;
+
+  /* position */
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+
+  /* flex */
+  display: flex;
+  flex-direction: column;
+}
+
+.notification header {
+  /* style */
+  background-color: #eeeeee;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0 10px;
+
+  /* flex */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* transition */
+  transition: all 0.2s;
+}
+
+.notification header button {
+  font-size: 0.9em;
+  padding: 4px;
+}
+
+.notification main {
+  padding: 10px;
+}
+
+/* form */
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.group {
+  margin: 5px 0;
+}
