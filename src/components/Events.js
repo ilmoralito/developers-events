@@ -15,7 +15,8 @@ function Events({
   modalities,
   entrances,
   types,
-  periods
+  periods,
+  topics
 }) {
   const today = getToday();
   let eventList = events
@@ -38,7 +39,8 @@ function Events({
     modalities,
     entrances,
     types,
-    periods
+    periods,
+    topics
   });
 
   // sort
@@ -90,7 +92,8 @@ const filter = ({
   modalities,
   entrances,
   types,
-  periods
+  periods,
+  topics
 }) => {
   let clonedEventList = [...eventList];
 
@@ -138,6 +141,14 @@ const filter = ({
         );
       }
     });
+  }
+
+  if (topics.length) {
+    clonedEventList = clonedEventList.filter(event =>
+      topics.some(topic => event.topics.includes(topic))
+    );
+
+    console.log(clonedEventList);
   }
 
   return clonedEventList;

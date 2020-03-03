@@ -29,6 +29,7 @@ function App() {
   const [entrances, setEntrances] = useState([]);
   const [types, setTypes] = useState([]);
   const [periods, setPeriods] = useState([]);
+  const [topics, setTopics] = useState([]);
 
   useEffect(() => {
     setBookmarks(
@@ -56,6 +57,7 @@ function App() {
     );
     setTypes(localStorage.types ? JSON.parse(localStorage.types) : []);
     setPeriods(localStorage.periods ? JSON.parse(localStorage.periods) : []);
+    setTopics(localStorage.topics ? JSON.parse(localStorage.topics) : []);
   }, []);
 
   const onKeydown = event => {
@@ -222,18 +224,39 @@ function App() {
     localStorage.setItem("periods", JSON.stringify([...periods, period]));
   };
 
+  const changeTopicsHandler = topic => {
+    if (topics.includes(topic)) {
+      const clonedTopics = [...topics];
+      const index = clonedTopics.indexOf(topic);
+
+      if (index > -1) {
+        clonedTopics.splice(index, 1);
+
+        setTopics(clonedTopics);
+        localStorage.setItem("topics", JSON.stringify(clonedTopics));
+      }
+
+      return false;
+    }
+
+    setTopics([...topics, topic]);
+    localStorage.setItem("topics", JSON.stringify([...topics, topic]));
+  };
+
   const resetFiltersHandler = () => {
     setCities([]);
     setModalities([]);
     setEntrances([]);
     setTypes([]);
     setPeriods([]);
+    setTopics([]);
 
     localStorage.removeItem("cities");
     localStorage.removeItem("modalities");
     localStorage.removeItem("entrances");
     localStorage.removeItem("types");
     localStorage.removeItem("periods");
+    localStorage.removeItem("topics");
   };
 
   return (
@@ -256,11 +279,13 @@ function App() {
         entrances={entrances}
         types={types}
         periods={periods}
+        topics={topics}
         onChangeCities={changeCitiesHandler}
         onChangeModalities={changeModalitiesHandler}
         onChangeEntries={changeEntrancesHandler}
         onChangeTypes={changeTypesHandler}
         onChangePeriods={changePeriodsHandler}
+        onChangeTopics={changeTopicsHandler}
         onResetFilters={resetFiltersHandler}
       />
       <Events
@@ -275,6 +300,7 @@ function App() {
         entrances={entrances}
         types={types}
         periods={periods}
+        topics={topics}
       />
       <Modal
         event={event}

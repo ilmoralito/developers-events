@@ -28,4 +28,16 @@ const getTypes = () => {
   return [...typesSet];
 };
 
-export { getCities, getModalities, getEntrances, getTypes };
+const getTopics = () => {
+  const topics = events
+    .map(event => event.topics)
+    .reduce((accumulator, current) => {
+      return accumulator.concat(current);
+    }, []);
+
+  const topicSet = new Set(topics);
+
+  return [...topicSet].sort();
+};
+
+export { getCities, getModalities, getEntrances, getTypes, getTopics };

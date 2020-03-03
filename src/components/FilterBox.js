@@ -3,7 +3,8 @@ import {
   getCities,
   getModalities,
   getEntrances,
-  getTypes
+  getTypes,
+  getTopics
 } from "../helpers/fields";
 import {
   translateModality,
@@ -21,23 +22,28 @@ const FilterBox = ({
   entrances,
   types,
   periods,
+  topics,
   onChangeCities,
   onChangeModalities,
   onChangeEntries,
   onChangeTypes,
   onChangePeriods,
+  onChangeTopics,
   onResetFilters
 }) => {
   const cityList = getCities();
   const modalityList = getModalities();
   const entranceList = getEntrances();
   const typeList = getTypes();
+  const topicList = getTopics();
+
   const openStatus = hasAnyFilter({
     cities,
     modalities,
     entrances,
     types,
-    periods
+    periods,
+    topics
   })
     ? "open"
     : "";
@@ -45,7 +51,14 @@ const FilterBox = ({
   return (
     <details open={openStatus}>
       <summary>Filtros</summary>
-      {hasAnyFilter({ cities, modalities, entrances, types, periods }) && (
+      {hasAnyFilter({
+        cities,
+        modalities,
+        entrances,
+        types,
+        periods,
+        topics
+      }) && (
         <button className="reset-filters" onClick={() => onResetFilters()}>
           Resetear filtros
         </button>
@@ -68,7 +81,7 @@ const FilterBox = ({
         <div>
           <h2>Modalidades</h2>
           {modalityList.map(modality => (
-            <label>
+            <label key={modality}>
               <input
                 type="checkbox"
                 value={translateModality(modality)}
@@ -82,7 +95,7 @@ const FilterBox = ({
         <div>
           <h2>Entrada</h2>
           {entranceList.map(entrance => (
-            <label>
+            <label key={entrance}>
               <input
                 type="checkbox"
                 value={translateEntryPrice(entrance)}
@@ -96,7 +109,7 @@ const FilterBox = ({
         <div>
           <h2>Tipos</h2>
           {typeList.map(type => (
-            <label>
+            <label key={type}>
               <input
                 type="checkbox"
                 value={translateEventType(type)}
@@ -110,7 +123,7 @@ const FilterBox = ({
         <div>
           <h2>Periodos</h2>
           {periodList.map(period => (
-            <label>
+            <label key={period}>
               <input
                 type="checkbox"
                 value={period}
@@ -121,18 +134,40 @@ const FilterBox = ({
             </label>
           ))}
         </div>
+        <div>
+          <h2>Temas</h2>
+          {topicList.map(topic => (
+            <label key={topic}>
+              <input
+                type="checkbox"
+                value={topic}
+                checked={topics.includes(topic)}
+                onChange={() => onChangeTopics(topic)}
+              />{" "}
+              {topic}
+            </label>
+          ))}
+        </div>
       </div>
     </details>
   );
 };
 
-const hasAnyFilter = ({ cities, modalities, entrances, types, periods }) => {
+const hasAnyFilter = ({
+  cities,
+  modalities,
+  entrances,
+  types,
+  periods,
+  topics
+}) => {
   return (
     cities.length > 0 ||
     modalities.length > 0 ||
     entrances.length > 0 ||
     types.length > 0 ||
-    periods.length > 0
+    periods.length > 0 ||
+    topics.length > 0
   );
 };
 
