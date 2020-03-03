@@ -2,7 +2,8 @@ import React from "react";
 
 const BookmarkToggleButton = ({
   onToggleBookmarkButton,
-  bookmarkButtonBorder
+  bookmarkButtonBorder,
+  isBookmarking
 }) => (
   <button
     onClick={() => onToggleBookmarkButton()}
@@ -13,7 +14,8 @@ const BookmarkToggleButton = ({
       borderBottom: bookmarkButtonBorder
     }}
   >
-    Alternar marcadores
+    {isBookmarking === null ? " " : isBookmarking ? "+ " : "- "}
+    Marcadores
   </button>
 );
 

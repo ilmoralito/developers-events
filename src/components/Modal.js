@@ -17,10 +17,29 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
     setTimeout(() => setNotifyMailWasSent(false), 3000);
   };
 
+  const {
+    id,
+    name,
+    date,
+    city,
+    address,
+    description,
+    information,
+    startTime,
+    endTime,
+    contact,
+    modality,
+    entrance,
+    type,
+    topics,
+    publicationDate
+  } = event;
+  const topicList = topics && topics.join(", ");
+
   return (
     <div className={`modal ${modalStatus ? "open" : ""}`}>
       <header>
-        <p>{event.name}</p>
+        <p>{name}</p>
         <div className="control">
           <button
             onClick={() => setDisplayShareEventForm(!displayShareEventForm)}
@@ -48,59 +67,63 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
           <tbody>
             <tr>
               <td>Fecha</td>
-              <td>{event.date}</td>
+              <td>{date}</td>
             </tr>
             <tr>
               <td>Horario</td>
               <td>
-                De {event.startTime} a {event.endTime}
+                De {startTime} a {endTime}
               </td>
             </tr>
-            {event.modality === "live" && (
+            {modality === "live" && (
               <>
                 <tr>
                   <td>Ciudad</td>
-                  <td>{event.city}</td>
+                  <td>{city}</td>
                 </tr>
                 <tr>
                   <td>Dirección</td>
-                  <td>{event.address}</td>
+                  <td>{address}</td>
                 </tr>
               </>
             )}
             <tr>
               <td>Mayor información</td>
               <td>
-                <a href={event.information}>{event.information}</a>
+                <a href={information}>{information}</a>
               </td>
             </tr>
             <tr>
               <td>Contacto</td>
               <td>
-                <a href={event.contact}>{event.contact}</a>
+                <a href={contact}>{contact}</a>
               </td>
             </tr>
             <tr>
               <td>Modalidad</td>
-              <td>{translateModality(event.modality)}</td>
+              <td>{translateModality(modality)}</td>
             </tr>
             <tr>
               <td>Entrada</td>
-              <td>{translateEntryPrice(event.entrance)}</td>
+              <td>{translateEntryPrice(entrance)}</td>
             </tr>
             <tr>
               <td>Tipo</td>
-              <td>{translateEventType(event.type)}</td>
+              <td>{translateEventType(type)}</td>
+            </tr>
+            <tr>
+              <td>Temas</td>
+              <td>{topicList}</td>
             </tr>
             <tr>
               <td>Fecha de publicación</td>
-              <td>{event.publicationDate}</td>
+              <td>{publicationDate}</td>
             </tr>
             <tr>
               <td colSpan="2">Descripción</td>
             </tr>
             <tr>
-              <td colSpan="2">{event.description}</td>
+              <td colSpan="2">{description}</td>
             </tr>
           </tbody>
         </table>

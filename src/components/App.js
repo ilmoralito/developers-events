@@ -18,6 +18,7 @@ function App() {
   const [modalStatus, setModalStatus] = useState(false);
   const [event, setEvent] = useState({});
   const [bookmarksContainerTop, setBookmarksContainerTop] = useState("-350px");
+  const [isBookmarking, setIsBookmarking] = useState(null);
   const [bookmarkButtonBorder, setBookmarkButtonBorder] = useState(
     "1px solid gray"
   );
@@ -72,11 +73,14 @@ function App() {
   };
 
   const bookmarksHandler = id => {
+    setTimeout(() => setIsBookmarking(null), 3000);
+
     if (isBookmarked(id)) {
       const updatedBookmarks = removeBookmarkById(id);
 
       localStorage.bookmarks = JSON.stringify(updatedBookmarks);
       setBookmarks(updatedBookmarks);
+      setIsBookmarking(false);
 
       return false;
     }
@@ -87,6 +91,7 @@ function App() {
 
     localStorage.bookmarks = JSON.stringify(updatedBookmarks);
     setBookmarks(updatedBookmarks);
+    setIsBookmarking(true);
   };
 
   const selectBookmarkHandler = id => {
@@ -279,6 +284,7 @@ function App() {
       <BookmarkToggleButton
         onToggleBookmarkButton={toggleBookmarkButtonHandler}
         bookmarkButtonBorder={bookmarkButtonBorder}
+        isBookmarking={isBookmarking}
       />
       <Notification />
     </div>

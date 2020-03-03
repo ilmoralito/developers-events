@@ -13,6 +13,7 @@
     "modality": "live",
     "entrance": "paid",
     "type": "meetup",
+    "topics": ["PICO-8"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -29,6 +30,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "workshop",
+    "topics": ["Javascript", "Python", "Symfony", "ReactJS", "React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -45,6 +47,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Kotlin", "Groovy", "Java"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -61,6 +64,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -77,6 +81,7 @@
     "modality": "on-line",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Symfony", "ReactJS"],
     "publicationDate": "2020-02-29"
   },
   {
@@ -93,6 +98,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["ReactJS", "React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -109,6 +115,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Javascript", "ReactJS", "React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -125,6 +132,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Javascript"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -141,6 +149,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["GraphQL", "ReactJS", "React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -157,6 +166,7 @@
     "modality": "on-line",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["React Native"],
     "publicationDate": "2020-02-29"
   },
   {
@@ -173,6 +183,7 @@
     "modality": "on-line",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Python"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -189,6 +200,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -205,6 +217,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Javascript", "GraphQL", "ReactJS", "React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -221,6 +234,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["ReactJS", "React Native"],
     "publicationDate": "2020-02-28"
   },
   {
@@ -237,6 +251,7 @@
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
+    "topics": ["Groovy", "Grails"],
     "publicationDate": "2015-02-29"
   }
 ]
