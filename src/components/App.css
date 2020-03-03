@@ -247,7 +247,7 @@ div.bookmark-list ul li button {
 }
 
 .modal main {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 /* table */
@@ -365,4 +365,11 @@ input {
 
 .group {
   margin: 5px 0;
+}
+
+/* alert */
+.alert {
+  background-color: #cce5ff;
+  font-weight: normal;
+  padding: 10px;
 }

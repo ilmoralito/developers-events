@@ -4,11 +4,18 @@ import {
   translateEntryPrice,
   translateEventType
 } from "../helpers/translations";
+import Alert from "./Alert";
 
 const Modal = ({ event, modalStatus, onToggleModal }) => {
   const [displayShareEventForm, setDisplayShareEventForm] = useState(false);
+  const [notifyMailWasSent, setNotifyMailWasSent] = useState(false);
 
-  const sendFormHandler = () => setDisplayShareEventForm(false);
+  const formSentHandler = () => {
+    setDisplayShareEventForm(false);
+    setNotifyMailWasSent(true);
+
+    setTimeout(() => setNotifyMailWasSent(false), 3000);
+  };
 
   return (
     <div className={`modal ${modalStatus ? "open" : ""}`}>
@@ -33,8 +40,9 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
         </div>
       </header>
       <main>
+        {notifyMailWasSent && <Alert type="alert">Correo fue enviado</Alert>}
         {displayShareEventForm && (
-          <ShareEventForm event={event} onFormSend={sendFormHandler} />
+          <ShareEventForm event={event} onFormSent={formSentHandler} />
         )}
         <table>
           <tbody>
@@ -101,7 +109,7 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
   );
 };
 
-const ShareEventForm = ({ event, onFormSend }) => {
+const ShareEventForm = ({ event, onFormSent }) => {
   const [sender, setSender] = useState("");
   const [receiver, setReceiver] = useState("");
   const [subject, setSubject] = useState("");
@@ -131,7 +139,7 @@ const ShareEventForm = ({ event, onFormSend }) => {
         setReceiver("");
         setSubject("");
 
-        onFormSend();
+        onFormSent();
       }}
     >
       <div className="group">
