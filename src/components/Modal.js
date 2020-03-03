@@ -96,7 +96,7 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
             <tr>
               <td>Contacto</td>
               <td>
-                <a href={contact}>{contact}</a>
+                <a href={`mailto:${contact}`}>{contact}</a>
               </td>
             </tr>
             <tr>
