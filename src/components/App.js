@@ -13,7 +13,7 @@ import "./App.css";
 function App() {
   const [events, setEvents] = useState(eventList);
   const [filterText, setFilterText] = useState("");
-  const [currentSort, setCurrentSort] = useState("most recent");
+  const [currentSort, setCurrentSort] = useState("");
   const [bookmarks, setBookmarks] = useState([]);
   const [modalStatus, setModalStatus] = useState(false);
   const [event, setEvent] = useState({});
@@ -40,6 +40,12 @@ function App() {
   }, []);
 
   useEffect(() => {
+    setCurrentSort(
+      localStorage.currentSort ? localStorage.currentSort : "most recent"
+    );
+  }, []);
+
+  useEffect(() => {
     setCities(localStorage.cities ? JSON.parse(localStorage.cities) : []);
     setModalities(
       localStorage.modalities ? JSON.parse(localStorage.modalities) : []
@@ -59,7 +65,11 @@ function App() {
 
   const changeFilterTextHandler = text => setFilterText(text);
 
-  const changeCurrentSortHandler = sort => setCurrentSort(sort);
+  const changeCurrentSortHandler = sort => {
+    setCurrentSort(sort);
+
+    localStorage.setItem("currentSort", sort);
+  };
 
   const bookmarksHandler = id => {
     if (isBookmarked(id)) {
