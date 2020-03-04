@@ -294,16 +294,15 @@ tr:last-child td {
 
 /* bookmark toggle button */
 .bookmarkToggleButton {
-  border-top-left-radius: 0;
   border-top-right-radius: 0;
+  border-top-left-radius: 0;
   background-color: white;
-  border-top: none;
   font-size: 0.8em;
+  border-top: none;
   position: fixed;
   z-index: 100;
   right: 15px;
   top: 0;
-  transition: all 0.4s;
 }
 
 /* notification */

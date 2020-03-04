@@ -1,4 +1,5 @@
 import React from "react";
+import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 
 const BookmarkToggleButton = ({
   onToggleBookmarkButton,
@@ -14,8 +15,7 @@ const BookmarkToggleButton = ({
       borderBottom: bookmarkButtonBorder
     }}
   >
-    {isBookmarking === null ? " " : isBookmarking ? "+ " : "- "}
-    Marcadores
+    {isBookmarking === null ? <MdBookmarkBorder /> : <MdBookmark />}
   </button>
 );
 
