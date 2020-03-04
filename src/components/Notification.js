@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 
 const Notification = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,9 @@ const Notification = () => {
             localStorage.setItem("isOpen", newIsOpenStatus);
             setIsOpen(newIsOpenStatus);
           }}
+          className="button-icon"
         >
-          {isOpen ? "Ocultar" : "Mostrar"}
+          {isOpen ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
         </button>
       </header>
 
