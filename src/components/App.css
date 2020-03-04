@@ -94,13 +94,17 @@ ul.events li:first-child {
   margin-right: 10px;
 }
 
-.event > div:last-child {
+.event:last-child {
   justify-self: flex-end;
 }
 
-.event div:last-child button {
-  font-size: 0.8em;
-  padding: 5px;
+.event button {
+  border: 1px solid #dddddd;
+
+  /* flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* date-box */

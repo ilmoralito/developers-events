@@ -1,4 +1,5 @@
 import React from "react";
+import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { getDayAndMonth } from "../helpers/dates";
 
 const Event = ({ event, onSelectEvent, onBookmark, isBookmarked }) => {
@@ -23,11 +24,9 @@ const Event = ({ event, onSelectEvent, onBookmark, isBookmarked }) => {
           {name}
         </a>
       </div>
-      <div>
         <button type="button" onClick={() => onBookmark(id)}>
-          {isBookmarked ? "Bookmarked" : "Bookmark"}
+          {isBookmarked ? <MdBookmark /> : <MdBookmarkBorder />}
         </button>
-      </div>
     </li>
   );
 };
