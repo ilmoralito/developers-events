@@ -243,17 +243,17 @@ ul.events li:first-child {
 }
 
 .modal header .control {
-  flex: 1;
+  flex: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
 .modal header .control button {
-  padding: 5px;
+  padding: 8px;
 }
 
-.modal header .control button:last-child {
+.modal header .control button {
   margin-left: 5px;
 }
 
@@ -382,4 +382,11 @@ form input {
   background-color: #cce5ff;
   font-weight: normal;
   padding: 10px;
+}
+
+/* button-icon */
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

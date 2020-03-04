@@ -306,6 +306,8 @@ function App() {
         event={event}
         modalStatus={modalStatus}
         onToggleModal={toggleModalHandler}
+        bookmarks={bookmarks}
+        onBookmark={bookmarksHandler}
       />
       <BookmarkToggleButton
         onToggleBookmarkButton={toggleBookmarkButtonHandler}

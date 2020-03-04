@@ -1,12 +1,26 @@
 import React, { Fragment, useState } from "react";
 import {
+  MdClose,
+  MdShare,
+  MdBookmark,
+  MdBookmarkBorder,
+  MdSend
+} from "react-icons/md";
+import {
   translateModality,
   translateEntryPrice,
   translateEventType
 } from "../helpers/translations";
 import Alert from "./Alert";
+import { isBookmarked } from "../helpers/bookmarks";
 
-const Modal = ({ event, modalStatus, onToggleModal }) => {
+const Modal = ({
+  event,
+  modalStatus,
+  onToggleModal,
+  bookmarks,
+  onBookmark
+}) => {
   const [displayShareEventForm, setDisplayShareEventForm] = useState(false);
   const [notifyMailWasSent, setNotifyMailWasSent] = useState(false);
 
@@ -42,9 +56,18 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
         <p>{name}</p>
         <div className="control">
           <button
+            style={{ background: displayShareEventForm ? "#eeeeee" : "white" }}
             onClick={() => setDisplayShareEventForm(!displayShareEventForm)}
+            className="button-icon"
           >
-            Compartir
+            <MdShare />
+          </button>
+          <button onClick={() => onBookmark(id)} className="button-icon">
+            {isBookmarked({ bookmarks, id }) ? (
+              <MdBookmark />
+            ) : (
+              <MdBookmarkBorder />
+            )}
           </button>
           <button
             type="button"
@@ -53,8 +76,9 @@ const Modal = ({ event, modalStatus, onToggleModal }) => {
 
               onToggleModal();
             }}
+            className="button-icon"
           >
-            Cerrar
+            <MdClose />
           </button>
         </div>
       </header>
@@ -172,7 +196,6 @@ const ShareEventForm = ({ event, onFormSent }) => {
           id="sender"
           type="email"
           onChange={event => setSender(event.target.value)}
-          placeholder="tu@example.com"
         />
       </div>
 
@@ -183,7 +206,6 @@ const ShareEventForm = ({ event, onFormSent }) => {
           id="receiver"
           type="email"
           onChange={event => setReceiver(event.target.value)}
-          placeholder="destinatario@example.com"
         />
       </div>
 
@@ -198,7 +220,9 @@ const ShareEventForm = ({ event, onFormSent }) => {
       </div>
 
       <div className="group">
-        <button>Enviar</button>
+        <button className="button-icon">
+          <MdSend />
+        </button>
       </div>
     </form>
   );
