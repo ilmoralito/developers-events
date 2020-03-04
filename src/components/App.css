@@ -134,7 +134,7 @@ ul.events li:first-child {
 }
 
 /* BOOKMARKS */
-div.bookmarks-container {
+.bookmarks-container {
   background-color: #ed4337;
   position: absolute;
   overflow: auto;
@@ -146,12 +146,17 @@ div.bookmarks-container {
   padding: 10px;
 }
 
-div.bookmark-list ul {
+.bookmark-list {
+  margin-top: 20px;
+  display: block;
+}
+
+.bookmark-list ul {
   list-style: none;
   padding: 0;
 }
 
-div.bookmark-list ul li {
+.bookmark-list ul li {
   padding: 10px;
   border-top: 1px dashed rgba(255, 255, 255, 0.2);
 
@@ -162,23 +167,25 @@ div.bookmark-list ul li {
   align-items: baseline;
 }
 
-div.bookmark-list ul li:first-child {
+.bookmark-list ul li:first-child {
   border-top: none;
 }
 
-div.bookmark-list ul li div {
+.bookmark-list ul li div {
   flex: 1;
 }
 
-div.bookmark-list ul li div a {
+.bookmark-list ul li div a {
   text-decoration: none;
   color: white;
 }
 
-div.bookmark-list ul li button {
-  font-size: 0.8em;
-  padding: 5px;
+.bookmark-list ul li button {
   border: none;
+
+  /* flex */
+  display: flex;
+  align-items: center;
 }
 
 /* SORT */
