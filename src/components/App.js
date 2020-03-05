@@ -11,7 +11,7 @@ import eventList from "../data/events.json";
 import "./App.css";
 
 function App() {
-  const [events, setEvents] = useState(eventList);
+  const [events] = useState(eventList);
   const [filterText, setFilterText] = useState("");
   const [currentSort, setCurrentSort] = useState("");
   const [bookmarks, setBookmarks] = useState([]);
