@@ -4,7 +4,8 @@ import {
   getModalities,
   getEntrances,
   getTypes,
-  getTopics
+  getTopics,
+  getPeriods
 } from "../helpers/fields";
 import {
   translateModality,
@@ -12,9 +13,6 @@ import {
   translateEventType,
   translatePeriods
 } from "../helpers/translations";
-import { TODAY, CURRENT_WEEK, CURRENT_MONTH } from "../constants/periods";
-
-const periodList = [TODAY, CURRENT_WEEK, CURRENT_MONTH];
 
 const FilterBox = ({
   cities,
@@ -36,6 +34,7 @@ const FilterBox = ({
   const entranceList = getEntrances();
   const typeList = getTypes();
   const topicList = getTopics();
+  const periodList = getPeriods();
 
   const openStatus = hasAnyFilter({
     cities,

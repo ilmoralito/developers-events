@@ -1,4 +1,5 @@
 import events from "../data/events.json";
+import { TODAY, CURRENT_WEEK, CURRENT_MONTH } from "../constants/periods";
 
 const getCities = () => {
   const allCities = events.map(event => event.city);
@@ -40,4 +41,15 @@ const getTopics = () => {
   return [...topicSet].sort();
 };
 
-export { getCities, getModalities, getEntrances, getTypes, getTopics };
+const getPeriods = () => {
+  return [TODAY, CURRENT_WEEK, CURRENT_MONTH];
+};
+
+export {
+  getCities,
+  getModalities,
+  getEntrances,
+  getTypes,
+  getTopics,
+  getPeriods
+};
