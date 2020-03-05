@@ -1,33 +1,13 @@
 import events from "../data/events.json";
 import { TODAY, CURRENT_WEEK, CURRENT_MONTH } from "../constants/periods";
 
-const getCities = () => {
-  const allCities = events.map(event => event.city);
-  const citiesSet = new Set(allCities);
+const getCities = () => getData("city");
 
-  return [...citiesSet];
-};
+const getModalities = () => getData("modality");
 
-const getModalities = () => {
-  const allModalities = events.map(event => event.modality);
-  const modalitiesSet = new Set(allModalities);
+const getEntrances = () => getData("entrance");
 
-  return [...modalitiesSet];
-};
-
-const getEntrances = () => {
-  const allEntrances = events.map(event => event.entrance);
-  const entrancesSet = new Set(allEntrances);
-
-  return [...entrancesSet];
-};
-
-const getTypes = () => {
-  const allTypes = events.map(event => event.type);
-  const typesSet = new Set(allTypes);
-
-  return [...typesSet];
-};
+const getTypes = () => getData("type");
 
 const getTopics = () => {
   const topics = events
@@ -43,6 +23,13 @@ const getTopics = () => {
 
 const getPeriods = () => {
   return [TODAY, CURRENT_WEEK, CURRENT_MONTH];
+};
+
+const getData = property => {
+  const results = events.map(event => event[property]);
+  const set = new Set(results);
+
+  return [...set];
 };
 
 export {
