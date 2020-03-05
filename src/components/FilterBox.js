@@ -43,21 +43,12 @@ const FilterBox = ({
     types,
     periods,
     topics
-  })
-    ? "open"
-    : "";
+  });
 
   return (
-    <details open={openStatus}>
-      <summary>Filtros</summary>
-      {hasAnyFilter({
-        cities,
-        modalities,
-        entrances,
-        types,
-        periods,
-        topics
-      }) && (
+    <details open={openStatus && "open"}>
+      <summary>Filtros{openStatus ? "..." : ""}</summary>
+      {openStatus && (
         <button className="reset-filters" onClick={() => onResetFilters()}>
           Resetear filtros
         </button>
