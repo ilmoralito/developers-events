@@ -390,3 +390,9 @@ form input {
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 935px) {
+  .filter-box {
+    flex-direction: column;
+  }
+}
