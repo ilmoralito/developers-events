@@ -2,12 +2,22 @@ import React from "react";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { getDayAndMonth } from "../helpers/dates";
 
-const Event = ({ event, onSelectEvent, onBookmark, isBookmarked }) => {
+const Event = ({
+  event,
+  onSelectEvent,
+  onBookmark,
+  isBookmarked,
+  isEventSelected
+}) => {
   const { id, name, date, isNow } = event;
   const [day, month] = getDayAndMonth(date);
 
   return (
-    <li className={`event ${isNow ? "isNow" : ""}`}>
+    <li
+      className={`event ${isNow ? "is-now" : ""} ${
+        isEventSelected ? "selected" : ""
+      }`}
+    >
       <div className="date-box">
         <div>{day}</div>
         <div>{month}</div>
@@ -24,9 +34,9 @@ const Event = ({ event, onSelectEvent, onBookmark, isBookmarked }) => {
           {name}
         </a>
       </div>
-        <button type="button" onClick={() => onBookmark(id)}>
-          {isBookmarked ? <MdBookmark /> : <MdBookmarkBorder />}
-        </button>
+      <button type="button" onClick={() => onBookmark(id)}>
+        {isBookmarked ? <MdBookmark /> : <MdBookmarkBorder />}
+      </button>
     </li>
   );
 };

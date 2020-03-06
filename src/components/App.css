@@ -65,7 +65,7 @@ ul.events li {
 }
 
 ul.events li:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 ul.events li:first-child {
@@ -86,8 +86,12 @@ ul.events li:first-child {
   flex: 1;
 }
 
-.event.isNow {
+.event.is-now {
   background-color: #eeeeee;
+}
+
+.event.selected {
+  background-color: #f7f7f7;
 }
 
 .event > div:first-child {

@@ -63,6 +63,7 @@ function App() {
   const onKeydown = event => {
     if (event.keyCode === 27) {
       setModalStatus(false);
+      setEvent({});
     }
   };
 
@@ -117,7 +118,10 @@ function App() {
     setBookmarks(updatedBookmarks);
   };
 
-  const toggleModalHandler = () => setModalStatus(!modalStatus);
+  const toggleModalHandler = () => {
+    setModalStatus(false);
+    setEvent({});
+  };
 
   const toggleBookmarkButtonHandler = () => {
     const isHidden = bookmarksContainerTop === "-350px";
@@ -295,6 +299,7 @@ function App() {
         currentSort={currentSort}
         onBookmark={bookmarksHandler}
         onSelectEvent={selectEventHandler}
+        eventSelected={event}
         cities={cities}
         modalities={modalities}
         entrances={entrances}
