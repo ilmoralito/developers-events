@@ -20,8 +20,11 @@ const Bookmark = ({ id, name, onSelectBookmark, onRemoveBookmark }) => {
       </div>
       {confirmRemovalStatus ? (
         <>
-          <button style={{ marginRight: "5px" }}>
-            <MdCheck onClick={() => onRemoveBookmark(id)} />
+          <button
+            style={{ marginRight: "5px" }}
+            onClick={() => onRemoveBookmark(id)}
+          >
+            <MdCheck />
           </button>
           <button onClick={() => setConfirmRemovalStatus(false)}>
             <MdCancel />
