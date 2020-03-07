@@ -14,7 +14,9 @@ function App() {
   const [events] = useState(eventList);
   const [filterText, setFilterText] = useState("");
   const [currentSort, setCurrentSort] = useState("");
-  const [bookmarks, setBookmarks] = useState([]);
+  const [bookmarks, setBookmarks] = useState(() =>
+    localStorage.bookmarks ? JSON.parse(localStorage.bookmarks) : []
+  );
   const [modalStatus, setModalStatus] = useState(false);
   const [event, setEvent] = useState({});
   const [bookmarksContainerTop, setBookmarksContainerTop] = useState("-350px");
@@ -30,12 +32,6 @@ function App() {
   const [types, setTypes] = useState([]);
   const [periods, setPeriods] = useState([]);
   const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    setBookmarks(
-      localStorage.bookmarks ? JSON.parse(localStorage.bookmarks) : []
-    );
-  }, []);
 
   useEffect(() => {
     document.addEventListener("keydown", onKeydown, false);
