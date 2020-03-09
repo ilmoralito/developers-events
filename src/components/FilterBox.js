@@ -56,17 +56,11 @@ const FilterBox = ({
       <div className="filter-box">
         <div>
           <h2>Ciudades</h2>
-          {cityList.map(city => (
-            <label key={city}>
-              <input
-                type="checkbox"
-                value={city}
-                checked={cities.includes(city)}
-                onChange={() => onChangeCities(city)}
-              />{" "}
-              {city}
-            </label>
-          ))}
+          <Box
+            collectionList={cityList}
+            collection={cities}
+            onChange={onChangeCities}
+          />
         </div>
         <div>
           <h2>Modalidades</h2>
@@ -126,22 +120,32 @@ const FilterBox = ({
         </div>
         <div>
           <h2>Temas</h2>
-          {topicList.map(topic => (
-            <label key={topic}>
-              <input
-                type="checkbox"
-                value={topic}
-                checked={topics.includes(topic)}
-                onChange={() => onChangeTopics(topic)}
-              />{" "}
-              {topic}
-            </label>
-          ))}
+          <Box
+            collectionList={topicList}
+            collection={topics}
+            onChange={onChangeTopics}
+          />
         </div>
       </div>
     </details>
   );
 };
+
+const Box = ({ collectionList, collection, onChange }) => (
+  <>
+    {collectionList.map(element => (
+      <label key={element}>
+        <input
+          type="checkbox"
+          value={element}
+          checked={collection.includes(element)}
+          onChange={() => onChange(element)}
+        />{" "}
+        {element}
+      </label>
+    ))}
+  </>
+);
 
 const hasAnyFilter = ({
   cities,
