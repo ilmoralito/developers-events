@@ -129,7 +129,7 @@
     "name": "Metal slug meetup",
     "date": "2021-01-14",
     "location": {
-      "city": "Leon",
+      "city": "León",
       "address": "Lorem ipsum dolor sit amet"
     },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -171,7 +171,7 @@
     "name": "hold down two seconds + up",
     "date": "2021-03-14",
     "location": {
-      "city": "Leon",
+      "city": "León",
       "address": "Lorem ipsum dolor sit amet"
     },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
@@ -229,7 +229,7 @@
     "name": "PICO-8 meetup",
     "date": "2021-03-14",
     "location": {
-      "city": "Leon",
+      "city": "León",
       "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -250,7 +250,7 @@
     "name": "Mario Bros at pico pico cafe",
     "date": "2021-03-14",
     "location": {
-      "city": "Leon",
+      "city": "León",
       "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
