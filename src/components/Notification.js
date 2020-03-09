@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 
 const Notification = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setIsOpen(localStorage.isOpen ? JSON.parse(localStorage.isOpen) : true);
-  }, []);
+  const [isOpen, setIsOpen] = useState(() =>
+    localStorage.isOpen !== undefined ? JSON.parse(localStorage.isOpen) : true
+  );
 
   return (
     <div className="notification">
