@@ -2,17 +2,27 @@
   {
     "id": 1,
     "name": "Pico Pico cafe",
-    "date": "2020-03-03",
-    "city": "Managua",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "date": "2020-03-09",
+    "location": {
+      "city": "Managua",
+      "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.lexaloffle.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "picopicocafe@lexaloffle.com",
+    "schedule": {
+      "startTime": "8",
+      "endTime": "5"
+    },
+    "organizer": {
+      "name": "lexaloffle",
+      "url": "https://www.lexaloffle.com/",
+      "contact": {
+        "name": "Joseph White",
+        "email": "hey@lexaloffle.com"
+      }
+    },
     "modality": "live",
     "entrance": "paid",
-    "type": "meetup",
+    "type": "workshop",
     "topics": ["PICO-8"],
     "publicationDate": "2020-02-28"
   },
@@ -20,13 +30,17 @@
     "id": 2,
     "name": "Kirby cafe",
     "date": "2020-10-07",
-    "city": "Leon",
-    "address": "Lorem ipsum dolor sit amet",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://kirbycafe.jp/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "kirby@kirbycafe.jp",
+    "location": { "city": "León", "address": "Lorem ipsum dolor sit amet" },
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "kirbycafe",
+      "url": "https://kirbycafe.jp/",
+      "contact": {
+        "name": "Kirby",
+        "email": "kirby@kirbycafe.jp"
+      }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "workshop",
@@ -37,13 +51,17 @@
     "id": 3,
     "name": "Migthy final fight",
     "date": "2020-11-14",
-    "city": "Leon",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "León",
+      "address": "Lorem ipsum dolor sit amet"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.snk-corp.co.jp/us/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "kio@.snk-corp.co.jp",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "snk",
+      "url": "https://www.snk-corp.co.jp/us/",
+      "contact": { "name": "snk", "email": "kio@.snk-corp.co.jp" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -54,13 +72,14 @@
     "id": 4,
     "name": "Mario & Luigi Cafe",
     "date": "2021-03-14",
-    "city": "Masaya",
-    "address": "Lorem ipsum",
+    "location": { "city": "Masaya", "address": "Lorem ipsum" },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.nintendo.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "miyamoto@nintendo.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "nintendo",
+      "url": "https://www.nintendo.com/",
+      "contact": { "name": "nintendo", "email": "miyamoto@nintendo.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -71,13 +90,13 @@
     "id": 5,
     "name": "ReactJS is not that hard!",
     "date": "2020-02-29",
-    "city": "Granada",
-    "address": "Casa de los pueblos",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://reactjs.org/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "ruroni@reactjs.org",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "reactjs",
+      "url": "https://reactjs.org/",
+      "contact": { "name": "reactjs", "email": "ruroni@reactjs.org" }
+    },
     "modality": "on-line",
     "entrance": "free",
     "type": "meetup",
@@ -88,13 +107,17 @@
     "id": 6,
     "name": "NeoGeo",
     "date": "2020-03-14",
-    "city": "Managua",
-    "address": "Lorem ipsum dolor sit amet, consectetur.",
+    "location": {
+      "city": "Managua",
+      "address": "Lorem ipsum dolor sit amet, consectetur."
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.snk-corp.co.jp/us/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "kio@snk-corp.co.jp",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "snk",
+      "url": "https://www.snk-corp.co.jp/us/",
+      "contact": { "name": "snk", "email": "kio@snk-corp.co.jp" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -105,13 +128,17 @@
     "id": 7,
     "name": "Metal slug meetup",
     "date": "2021-01-14",
-    "city": "Leon",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "Leon",
+      "address": "Lorem ipsum dolor sit amet"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.snk-corp.co.jp/us/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "kio@snk-corp.co.jp",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "snk",
+      "url": "https://www.snk-corp.co.jp/us/",
+      "contact": { "name": "snk", "email": "kio@snk-corp.co.jp" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -122,13 +149,17 @@
     "id": 8,
     "name": "up up down dowm left right left right b a",
     "date": "2021-03-14",
-    "city": "Leon",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "Boaco",
+      "address": "Lorem ipsum"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.konami.com/en/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "simon@konami.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Konami",
+      "url": "https://www.konami.com/en/",
+      "contact": { "name": "Simon", "email": "simon@konami.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -139,13 +170,17 @@
     "id": 9,
     "name": "hold down two seconds + up",
     "date": "2021-03-14",
-    "city": "Masaya",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "Leon",
+      "address": "Lorem ipsum dolor sit amet"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    "information": "http://www.capcom.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "ryo@capcom.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Capcom",
+      "url": "http://www.capcom.com/",
+      "contact": { "name": "Ryo", "email": "ryo@capcom.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -155,31 +190,34 @@
   {
     "id": 10,
     "name": "Megaman 2 Willy Theme",
-    "date": "2020-02-29",
-    "city": "Boaco",
-    "address": "Lorem ipsum dolor sit amet",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "http://www.capcom.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "ryo@capcom.com",
+    "date": "2020-03-29",
+    "description": "Lorem ipsum dolor sit amet",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Capcom",
+      "url": "http://www.capcom.com/",
+      "contact": { "name": "Ryo", "email": "ryo@capcom.com" }
+    },
     "modality": "on-line",
     "entrance": "free",
-    "type": "meetup",
+    "type": "workshop",
     "topics": ["React Native"],
-    "publicationDate": "2020-02-29"
+    "publicationDate": "2020-03-29"
   },
   {
     "id": 11,
     "name": "The final countdown",
     "date": "2020-12-14",
-    "city": "Managua",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.europetheband.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "joey.tempest@europetheband.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Europe",
+      "url": "https://www.europetheband.com/",
+      "contact": {
+        "name": "Joey Tempest",
+        "email": "joey.tempest@europetheband.com"
+      }
+    },
     "modality": "on-line",
     "entrance": "free",
     "type": "meetup",
@@ -190,13 +228,17 @@
     "id": 12,
     "name": "PICO-8 meetup",
     "date": "2021-03-14",
-    "city": "Leon",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "Leon",
+      "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.lexaloffle.com",
-    "startTime": "3",
-    "endTime": "5",
-    "contact": "pico8@lexaloffle.com",
+    "schedule": { "startTime": "3", "endTime": "5" },
+    "organizer": {
+      "name": "Lexaloffle",
+      "url": "https://www.lexaloffle.com",
+      "contact": { "name": "Pico-8", "email": "pico8@lexaloffle.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -207,13 +249,17 @@
     "id": 13,
     "name": "Mario Bros at pico pico cafe",
     "date": "2021-03-14",
-    "city": "Leon",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "Leon",
+      "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.nintendo.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "miyamoto@nintendo.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Nintendo",
+      "url": "https://www.nintendo.com/",
+      "contact": { "name": "Nintendo", "email": "miyamoto@nintendo.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -224,13 +270,17 @@
     "id": 14,
     "name": "Hack megadrive",
     "date": "2021-03-14",
-    "city": "Masaya",
-    "address": "Lorem ipsum dolor sit amet, consectetur",
+    "location": {
+      "city": "Masaya",
+      "address": "Lorem ipsum dolor sit amet, consectetur"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.sega.com/",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "sonic@sega.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Sega",
+      "url": "https://www.sega.com/",
+      "contact": { "name": "Sega", "email": "sonic@sega.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",
@@ -241,13 +291,17 @@
     "id": 15,
     "name": "Tomato color",
     "date": "2020-02-29",
-    "city": "Granada",
-    "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "location": {
+      "city": "Granada",
+      "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "information": "https://www.google.com",
-    "startTime": "8",
-    "endTime": "5",
-    "contact": "aws@domain.com",
+    "schedule": { "startTime": "8", "endTime": "5" },
+    "organizer": {
+      "name": "Google",
+      "url": "https://www.google.com",
+      "contact": { "name": "AWS", "email": "aws@domain.com" }
+    },
     "modality": "live",
     "entrance": "free",
     "type": "meetup",

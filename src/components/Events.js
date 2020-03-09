@@ -20,14 +20,7 @@ function Events({
 }) {
   const today = getToday();
   let eventList = events
-    .filter(event => {
-      const name = event.name.toLowerCase();
-      const city = event.city.toLowerCase();
-      const type = event.type.toLowerCase();
-      const text = filterText.toLowerCase();
-
-      return name.includes(text) || city.includes(text) || type.includes(text);
-    })
+    .filter(event => event.name.toLowerCase().includes(filterText))
     .map(event =>
       event.date === today ? { ...event, isNow: true } : { ...event }
     );
@@ -100,7 +93,7 @@ const filter = ({
 
   if (cities.length) {
     clonedEventList = clonedEventList.filter(event =>
-      cities.includes(event.city)
+      cities.includes(event.location && event.location.city)
     );
   }
 

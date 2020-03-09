@@ -1,7 +1,15 @@
 import events from "../data/events.json";
 import { TODAY, CURRENT_WEEK, CURRENT_MONTH } from "../constants/periods";
 
-const getCities = () => getData("city");
+const getCities = () => {
+  const cities = events
+    .map(event => event.location && event.location.city)
+    .filter(event => event);
+
+  const set = new Set(cities);
+
+  return [...set].sort();
+};
 
 const getModalities = () => getData("modality");
 

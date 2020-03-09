@@ -42,7 +42,7 @@ const Modal = ({ event, modalStatus, onToggleModal, onBookmark }) => {
         {displayShareEventForm && (
           <ShareEventForm event={event} onFormSent={formSentHandler} />
         )}
-        <Table {...event} />
+        {Object.keys(event).length > 0 && <Table {...event} />}
       </main>
     </div>
   );
@@ -84,18 +84,15 @@ const Control = ({
 
 const Table = ({
   date,
-  startTime,
-  endTime,
+  location,
+  description,
+  schedule,
+  organizer,
   modality,
-  city,
-  address,
-  information,
-  contact,
   entrance,
   type,
   topics,
-  publicationDate,
-  description
+  publicationDate
 }) => {
   const topicList = topics && topics.join(", ");
 
@@ -109,31 +106,33 @@ const Table = ({
         <tr>
           <td>Horario</td>
           <td>
-            De {startTime} a {endTime}
+            De {schedule.startTime} a {schedule.endTime}
           </td>
         </tr>
         {modality === "live" && (
           <>
             <tr>
               <td>Ciudad</td>
-              <td>{city}</td>
+              <td>{location.city}</td>
             </tr>
             <tr>
               <td>Dirección</td>
-              <td>{address}</td>
+              <td>{location.address}</td>
             </tr>
           </>
         )}
         <tr>
-          <td>Mayor información</td>
+          <td>Organizador</td>
           <td>
-            <a href={information}>{information}</a>
+            <a href={organizer.url}>{organizer.name}</a>
           </td>
         </tr>
         <tr>
           <td>Contacto</td>
           <td>
-            <a href={`mailto:${contact}`}>{contact}</a>
+            <a href={`mailto:${organizer.contact.email}`}>
+              {organizer.contact.name}
+            </a>
           </td>
         </tr>
         <tr>
