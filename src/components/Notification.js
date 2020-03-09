@@ -9,7 +9,7 @@ const Notification = () => {
   return (
     <div className="notification">
       <header>
-        <h2>Importante</h2>
+        <h2>Información</h2>
         <button
           onClick={() => {
             const newIsOpenStatus = !isOpen;
