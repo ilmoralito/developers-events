@@ -14,13 +14,7 @@ import {
 import Alert from "./Alert";
 import { isBookmarked } from "../helpers/bookmarks";
 
-const Modal = ({
-  event,
-  modalStatus,
-  onToggleModal,
-  bookmarks,
-  onBookmark
-}) => {
+const Modal = ({ event, modalStatus, onToggleModal, onBookmark }) => {
   const [displayShareEventForm, setDisplayShareEventForm] = useState(false);
   const [notifyMailWasSent, setNotifyMailWasSent] = useState(false);
 
@@ -63,11 +57,7 @@ const Modal = ({
             <MdShare />
           </button>
           <button onClick={() => onBookmark(id)} className="button-icon">
-            {isBookmarked({ bookmarks, id }) ? (
-              <MdBookmark />
-            ) : (
-              <MdBookmarkBorder />
-            )}
+            {isBookmarked(id) ? <MdBookmark /> : <MdBookmarkBorder />}
           </button>
           <button
             type="button"

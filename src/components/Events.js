@@ -10,7 +10,6 @@ function Events({
   currentSort,
   onSelectEvent,
   eventSelected,
-  bookmarks,
   onBookmark,
   cities,
   modalities,
@@ -57,7 +56,7 @@ function Events({
               event={event}
               onSelectEvent={onSelectEvent}
               onBookmark={onBookmark}
-              isBookmarked={isBookmarked({ bookmarks, id: event.id })}
+              isBookmarked={isBookmarked(event.id)}
               isEventSelected={event.id === eventSelected.id}
             />
           ))}

@@ -10,6 +10,12 @@ import Notification from "./Notification";
 import useSort from "../hooks/useSort";
 import eventList from "../data/events.json";
 import "./App.css";
+import {
+  isBookmarked,
+  getBookmaredEventkById,
+  removeBookmarkById,
+  getCurrentBookmarks
+} from "../helpers/bookmarks";
 
 function App() {
   const [events] = useState(eventList);
@@ -285,7 +291,6 @@ function App() {
       />
       <Events
         events={events}
-        bookmarks={bookmarks}
         filterText={filterText}
         currentSort={currentSort}
         onBookmark={bookmarksHandler}
@@ -302,7 +307,6 @@ function App() {
         event={event}
         modalStatus={modalStatus}
         onToggleModal={toggleModalHandler}
-        bookmarks={bookmarks}
         onBookmark={bookmarksHandler}
       />
       <BookmarkToggleButton
@@ -314,26 +318,5 @@ function App() {
     </div>
   );
 }
-
-const getCurrentBookmarks = () =>
-  localStorage.bookmarks ? JSON.parse(localStorage.bookmarks) : [];
-
-const getBookmaredEventkById = id => {
-  const currentBookmarks = getCurrentBookmarks();
-
-  return currentBookmarks.find(bookmark => bookmark.id === id);
-};
-
-const isBookmarked = id => {
-  const currentBookmarks = getCurrentBookmarks();
-
-  return currentBookmarks.map(bookmark => bookmark.id).includes(id);
-};
-
-const removeBookmarkById = id => {
-  const currentBookmarks = getCurrentBookmarks();
-
-  return currentBookmarks.filter(bookmark => bookmark.id !== id);
-};
 
 export default App;
