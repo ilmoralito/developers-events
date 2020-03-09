@@ -25,31 +25,12 @@ const Modal = ({ event, modalStatus, onToggleModal, onBookmark }) => {
     setTimeout(() => setNotifyMailWasSent(false), 3000);
   };
 
-  const {
-    id,
-    name,
-    date,
-    city,
-    address,
-    description,
-    information,
-    startTime,
-    endTime,
-    contact,
-    modality,
-    entrance,
-    type,
-    topics,
-    publicationDate
-  } = event;
-  const topicList = topics && topics.join(", ");
-
   return (
     <div className={`modal ${modalStatus ? "open" : ""}`}>
       <header>
-        <p>{name}</p>
+        <p>{event.name}</p>
         <Control
-          id={id}
+          id={event.id}
           displayShareEventForm={displayShareEventForm}
           setDisplayShareEventForm={setDisplayShareEventForm}
           onBookmark={onBookmark}
@@ -61,70 +42,7 @@ const Modal = ({ event, modalStatus, onToggleModal, onBookmark }) => {
         {displayShareEventForm && (
           <ShareEventForm event={event} onFormSent={formSentHandler} />
         )}
-        <table>
-          <tbody>
-            <tr>
-              <td>Fecha</td>
-              <td>{date}</td>
-            </tr>
-            <tr>
-              <td>Horario</td>
-              <td>
-                De {startTime} a {endTime}
-              </td>
-            </tr>
-            {modality === "live" && (
-              <>
-                <tr>
-                  <td>Ciudad</td>
-                  <td>{city}</td>
-                </tr>
-                <tr>
-                  <td>Dirección</td>
-                  <td>{address}</td>
-                </tr>
-              </>
-            )}
-            <tr>
-              <td>Mayor información</td>
-              <td>
-                <a href={information}>{information}</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Contacto</td>
-              <td>
-                <a href={`mailto:${contact}`}>{contact}</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Modalidad</td>
-              <td>{translateModality(modality)}</td>
-            </tr>
-            <tr>
-              <td>Entrada</td>
-              <td>{translateEntryPrice(entrance)}</td>
-            </tr>
-            <tr>
-              <td>Tipo</td>
-              <td>{translateEventType(type)}</td>
-            </tr>
-            <tr>
-              <td>Temas</td>
-              <td>{topicList}</td>
-            </tr>
-            <tr>
-              <td>Fecha de publicación</td>
-              <td>{publicationDate}</td>
-            </tr>
-            <tr>
-              <td colSpan="2">Descripción</td>
-            </tr>
-            <tr>
-              <td colSpan="2">{description}</td>
-            </tr>
-          </tbody>
-        </table>
+        <Table {...event} />
       </main>
     </div>
   );
@@ -161,6 +79,91 @@ const Control = ({
         <MdClose />
       </button>
     </div>
+  );
+};
+
+const Table = ({
+  date,
+  startTime,
+  endTime,
+  modality,
+  city,
+  address,
+  information,
+  contact,
+  entrance,
+  type,
+  topics,
+  publicationDate,
+  description
+}) => {
+  const topicList = topics && topics.join(", ");
+
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <td>Fecha</td>
+          <td>{date}</td>
+        </tr>
+        <tr>
+          <td>Horario</td>
+          <td>
+            De {startTime} a {endTime}
+          </td>
+        </tr>
+        {modality === "live" && (
+          <>
+            <tr>
+              <td>Ciudad</td>
+              <td>{city}</td>
+            </tr>
+            <tr>
+              <td>Dirección</td>
+              <td>{address}</td>
+            </tr>
+          </>
+        )}
+        <tr>
+          <td>Mayor información</td>
+          <td>
+            <a href={information}>{information}</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Contacto</td>
+          <td>
+            <a href={`mailto:${contact}`}>{contact}</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Modalidad</td>
+          <td>{translateModality(modality)}</td>
+        </tr>
+        <tr>
+          <td>Entrada</td>
+          <td>{translateEntryPrice(entrance)}</td>
+        </tr>
+        <tr>
+          <td>Tipo</td>
+          <td>{translateEventType(type)}</td>
+        </tr>
+        <tr>
+          <td>Temas</td>
+          <td>{topicList}</td>
+        </tr>
+        <tr>
+          <td>Fecha de publicación</td>
+          <td>{publicationDate}</td>
+        </tr>
+        <tr>
+          <td colSpan="2">Descripción</td>
+        </tr>
+        <tr>
+          <td colSpan="2">{description}</td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 
