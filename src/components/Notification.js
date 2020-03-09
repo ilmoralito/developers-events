@@ -26,20 +26,27 @@ const Notification = () => {
       {isOpen && (
         <main>
           <p>
-            Los eventos listados en esta pagina, los he recopilado del grupo{" "}
-            <a href="https://www.facebook.com/groups/197973700229538">
-              Desarrolladores Nicaragua
-            </a>{" "}
-            en el que los organizadores publican por si mismo sus eventos. El
-            criterios que asumo para listarlos en este sitio son los siguientes:
+            Los eventos listados en esta pagina, los he recopilado de los grupos{" "}
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/groups/197973700229538">
+                  Desarrolladores Nicaragua
+                </a>{" "}
+              </li>
+            </ul>
+            En ellos que los organizadores publican sus eventos.{" "}
+            <p>
+              El criterios que asumo para listarlos en este sitio son los
+              siguientes:
+            </p>
             <ul>
               <li>Confirmar el organizador y evento</li>
               <li>Ser autorizado por organizador</li>
             </ul>
           </p>
           <p>
-            El contacto con el organizador se realiza por email de facilitarlo o
-            por mensajes en facebook
+            El contacto con el organizador se realiza por email o por mensajes
+            en facebook
           </p>
         </main>
       )}
