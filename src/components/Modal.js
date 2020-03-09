@@ -48,29 +48,13 @@ const Modal = ({ event, modalStatus, onToggleModal, onBookmark }) => {
     <div className={`modal ${modalStatus ? "open" : ""}`}>
       <header>
         <p>{name}</p>
-        <div className="control">
-          <button
-            style={{ background: displayShareEventForm ? "#eeeeee" : "white" }}
-            onClick={() => setDisplayShareEventForm(!displayShareEventForm)}
-            className="button-icon"
-          >
-            <MdShare />
-          </button>
-          <button onClick={() => onBookmark(id)} className="button-icon">
-            {isBookmarked(id) ? <MdBookmark /> : <MdBookmarkBorder />}
-          </button>
-          <button
-            type="button"
-            onClick={event => {
-              event.preventDefault();
-
-              onToggleModal();
-            }}
-            className="button-icon"
-          >
-            <MdClose />
-          </button>
-        </div>
+        <Control
+          id={id}
+          displayShareEventForm={displayShareEventForm}
+          setDisplayShareEventForm={setDisplayShareEventForm}
+          onBookmark={onBookmark}
+          onToggleModal={onToggleModal}
+        />
       </header>
       <main>
         {notifyMailWasSent && <Alert type="alert">Correo fue enviado</Alert>}
@@ -142,6 +126,40 @@ const Modal = ({ event, modalStatus, onToggleModal, onBookmark }) => {
           </tbody>
         </table>
       </main>
+    </div>
+  );
+};
+
+const Control = ({
+  id,
+  displayShareEventForm,
+  setDisplayShareEventForm,
+  onBookmark,
+  onToggleModal
+}) => {
+  return (
+    <div className="control">
+      <button
+        style={{ background: displayShareEventForm ? "#eeeeee" : "white" }}
+        onClick={() => setDisplayShareEventForm(!displayShareEventForm)}
+        className="button-icon"
+      >
+        <MdShare />
+      </button>
+      <button onClick={() => onBookmark(id)} className="button-icon">
+        {isBookmarked(id) ? <MdBookmark /> : <MdBookmarkBorder />}
+      </button>
+      <button
+        type="button"
+        onClick={event => {
+          event.preventDefault();
+
+          onToggleModal();
+        }}
+        className="button-icon"
+      >
+        <MdClose />
+      </button>
     </div>
   );
 };
