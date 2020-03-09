@@ -33,28 +33,27 @@ function App() {
   );
 
   // filter status
-  const [cities, setCities] = useState([]);
-  const [modalities, setModalities] = useState([]);
-  const [entrances, setEntrances] = useState([]);
-  const [types, setTypes] = useState([]);
-  const [periods, setPeriods] = useState([]);
-  const [topics, setTopics] = useState([]);
+  const [cities, setCities] = useState(() =>
+    localStorage.cities ? JSON.parse(localStorage.cities) : []
+  );
+  const [modalities, setModalities] = useState(() =>
+    localStorage.modalities ? JSON.parse(localStorage.modalities) : []
+  );
+  const [entrances, setEntrances] = useState(() =>
+    localStorage.entrances ? JSON.parse(localStorage.entrances) : []
+  );
+  const [types, setTypes] = useState(() =>
+    localStorage.types ? JSON.parse(localStorage.types) : []
+  );
+  const [periods, setPeriods] = useState(() =>
+    localStorage.periods ? JSON.parse(localStorage.periods) : []
+  );
+  const [topics, setTopics] = useState(() =>
+    localStorage.topics ? JSON.parse(localStorage.topics) : []
+  );
 
   useEffect(() => {
     document.addEventListener("keydown", onKeydown, false);
-  }, []);
-
-  useEffect(() => {
-    setCities(localStorage.cities ? JSON.parse(localStorage.cities) : []);
-    setModalities(
-      localStorage.modalities ? JSON.parse(localStorage.modalities) : []
-    );
-    setEntrances(
-      localStorage.entrances ? JSON.parse(localStorage.entrances) : []
-    );
-    setTypes(localStorage.types ? JSON.parse(localStorage.types) : []);
-    setPeriods(localStorage.periods ? JSON.parse(localStorage.periods) : []);
-    setTopics(localStorage.topics ? JSON.parse(localStorage.topics) : []);
   }, []);
 
   const onKeydown = event => {
