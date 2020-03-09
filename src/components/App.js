@@ -7,13 +7,14 @@ import Modal from "./Modal";
 import BookmarkToggleButton from "./BookmarkToggleButton";
 import FilterBox from "./FilterBox";
 import Notification from "./Notification";
+import useSort from "../hooks/useSort";
 import eventList from "../data/events.json";
 import "./App.css";
 
 function App() {
   const [events] = useState(eventList);
   const [filterText, setFilterText] = useState("");
-  const [currentSort, setCurrentSort] = useState("");
+  const [currentSort, setCurrentSort] = useSort();
   const [bookmarks, setBookmarks] = useState(() =>
     localStorage.bookmarks ? JSON.parse(localStorage.bookmarks) : []
   );
@@ -35,12 +36,6 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("keydown", onKeydown, false);
-  }, []);
-
-  useEffect(() => {
-    setCurrentSort(
-      localStorage.currentSort ? localStorage.currentSort : "most recent"
-    );
   }, []);
 
   useEffect(() => {
