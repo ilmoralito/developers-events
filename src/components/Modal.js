@@ -256,9 +256,13 @@ const validator = {
       this.errors.receiver = "Receptor es requerido";
     }
 
-    if (!this.isValidEmail(data.receiver)) {
-      this.errors.receiverEmail = "Email de receptor es invalido";
-    }
+    const emails = data.receiver.split(",").map(email => email.trim());
+
+    emails.forEach(email => {
+      if (!this.isValidEmail(email)) {
+        this.errors.receiverEmail[email] = `${email} no es un email valido`;
+      }
+    });
 
     if (!data.subject) {
       this.errors.subject = "Asunto es requerido";
@@ -276,7 +280,7 @@ const validator = {
 
     for (const key in this.errors) {
       if (this.errors.hasOwnProperty(key)) {
-        const message = this.errors[key];
+        const message = `${this.errors[key]}`;
 
         messages = [...messages, message];
       }
