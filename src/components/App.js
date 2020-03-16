@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Filter from "./Filter";
-import Sort from "./Sort";
 import Bookmarks from "./Bookmarks";
 import Events from "./Events";
 import Modal from "./Modal";
@@ -268,8 +267,9 @@ function App() {
         onRemoveBookmark={removeBookmarkHandler}
         bookmarksContainerTop={bookmarksContainerTop}
       />
-      <Filter filterText={filterText} onChange={changeFilterTextHandler} />
-      <Sort
+      <Filter
+        filterText={filterText}
+        onChange={changeFilterTextHandler}
         currentSort={currentSort}
         onChangeCurrentSort={changeCurrentSortHandler}
       />
